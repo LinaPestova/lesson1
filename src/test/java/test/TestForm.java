@@ -16,8 +16,6 @@ public class TestForm {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
-        Configuration.timeout = 5000;
     }
     @Test
     void firstTest() {
@@ -35,7 +33,7 @@ public class TestForm {
         $(byText("1")).click();
         $("#subjectsInput").setValue("Math").pressEnter();
         $(byText("Music")).click();
-        $("#uploadPicture").uploadFile(new File("src\\test\\resources\\test pic.jpg"));
+        $("#uploadPicture").uploadFromClasspath("test pic.jpg");
         $("#currentAddress").setValue("New address");
         $("#state").click();
         $(byText("NCR")).click();
